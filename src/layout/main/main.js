@@ -3,19 +3,23 @@ import Movies from '../../components/movie-list'
 import Spinner from '../../components/spinner'
 import Search from '../../components/search'
 
-// const API_KEY = process.env.API_KEY
+const API_KEY = process.env.API_KEY
 
 export default class Main extends Component {
     state = {
         movies: [],
         loading: true
     }
-    _apiBase = `http://www.omdbapi.com/?apikey=83b48e90&s=`
+    _apiBase = `https://www.omdbapi.com/?apikey=${ API_KEY }&s=`
 
     componentDidMount() {
         fetch(`${this._apiBase}matrix`)
             .then(response => response.json())
             .then(data => this.setState({ movies: data.Search, loading: false }))
+            .catch((err) => {
+                console.log(err)
+                this.setState({ loading: false })
+            })
     }
 
     searchMovies = (str, type = 'all') => {
@@ -24,6 +28,10 @@ export default class Main extends Component {
             type !== 'all' ? `&type=${type}` : ''}`)
             .then(response => response.json())
             .then(data => this.setState({ movies: data.Search, loading: false  }))
+            .catch((err) => {
+                console.log(err)
+                this.setState({ loading: false })
+            })
     }
 
     render() {
