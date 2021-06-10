@@ -1,0 +1,5 @@
+nav{border-radius:1rem}
+.page-footer{padding-top:0px}footer{border-radius:1rem}.footer-copyright{border-radius:1rem}
+.movies{display:grid;grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));gap:1rem}.card{border-radius:10px}
+.search-btn{position:absolute;top:0;right:.5rem}label:not(:last-child){margin-right:1rem}
+body{margin:0;font-family:Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.container{margin-top:5px;margin-bottom:5px}nav{padding:0 1rem}.content{min-height:calc(100vh - 70px - 64px);padding:1.5rem 0}
