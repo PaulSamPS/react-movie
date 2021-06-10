@@ -3,14 +3,14 @@ import Movies from '../../components/movie-list'
 import Spinner from '../../components/spinner'
 import Search from '../../components/search'
 
-// const API_KEY = process.env.API_KEY
+const API_KEY = process.env.API_KEY
 
 export default class Main extends Component {
     state = {
         movies: [],
         loading: true
     }
-    _apiBase = `http://www.omdbapi.com/?apikey=83b48e90&s=`
+    _apiBase = `http://www.omdbapi.com/?apikey=${ API_KEY }&s=`
 
     componentDidMount() {
         fetch(`${this._apiBase}matrix`)
